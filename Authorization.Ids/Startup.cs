@@ -16,12 +16,12 @@ namespace Authorization.Ids
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -40,10 +40,20 @@ namespace Authorization.Ids
             services.AddIdentityServer()
                 .AddDeveloperSigningCredential()
                 .AddInMemoryPersistedGrants()
-                //.AddInMemoryIdentityResources(Config.GetIdentityResources())
+                .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApiResources())
                 .AddInMemoryClients(Config.GetClients())
                 .AddAspNetIdentity<ApplicationUser>();
+
+//            services.AddAuthentication()
+//              .AddGoogle(options =>
+//              {
+//                    // register your IdentityServer with Google at https://console.developers.google.com
+//                    // enable the Google+ API
+//                    // set the redirect URI to http://localhost:port/signin-google
+//                    options.ClientId = "721445775317-r2a1ng1n453k7i239bqfrq8henq8nggv.apps.googleusercontent.com";
+//                    options.ClientSecret = "6NKCgF42zjGfQ3FPXdFWukpp";
+//              });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,15 +71,15 @@ namespace Authorization.Ids
             }
 
             app.UseStaticFiles();
+            app.UseIdentityServer();
+            app.UseMvcWithDefaultRoute();
 
-            app.UseAuthentication();
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
+//            app.UseMvc(routes =>
+//            {
+//                routes.MapRoute(
+//                    name: "default",
+//                    template: "{controller=Home}/{action=Index}/{id?}");
+//            });
         }
     }
 }

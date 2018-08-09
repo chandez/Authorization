@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Authorization.Ids.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Authorization.Ids.Controllers
 {
@@ -23,6 +24,7 @@ namespace Authorization.Ids.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
