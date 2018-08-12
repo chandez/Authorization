@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization.Ids", "Authorization.Ids\Authorization.Ids.csproj", "{75F51F2C-34FF-434C-8E7F-CB1818762CCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authorization.Ids", "Authorization.Ids\Authorization.Ids.csproj", "{75F51F2C-34FF-434C-8E7F-CB1818762CCB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{E7AD81A0-E178-4375-843C-F16F2B733E49}"
 	ProjectSection(SolutionItems) = preProject
@@ -12,9 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{E7AD81A0-E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{976F9B9F-4B03-430B-9D68-4FFA549F249D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization.Api", "Authorization.Api\Authorization.Api.csproj", "{661E065D-FD12-4061-AFA4-4730849A7B8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authorization.Api", "Authorization.Api\Authorization.Api.csproj", "{661E065D-FD12-4061-AFA4-4730849A7B8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization.Cmd", "Authorization.Cmd\Authorization.Cmd.csproj", "{6E092B56-D05C-42A7-B937-DDF3F4327A26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authorization.Cmd", "Authorization.Cmd\Authorization.Cmd.csproj", "{6E092B56-D05C-42A7-B937-DDF3F4327A26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization.Web", "Authorization.Web\Authorization.Web.csproj", "{1048EE0F-0256-4B99-A3DC-9636FD941421}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +36,10 @@ Global
 		{6E092B56-D05C-42A7-B937-DDF3F4327A26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E092B56-D05C-42A7-B937-DDF3F4327A26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E092B56-D05C-42A7-B937-DDF3F4327A26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1048EE0F-0256-4B99-A3DC-9636FD941421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1048EE0F-0256-4B99-A3DC-9636FD941421}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1048EE0F-0256-4B99-A3DC-9636FD941421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1048EE0F-0256-4B99-A3DC-9636FD941421}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{661E065D-FD12-4061-AFA4-4730849A7B8B} = {976F9B9F-4B03-430B-9D68-4FFA549F249D}
 		{6E092B56-D05C-42A7-B937-DDF3F4327A26} = {976F9B9F-4B03-430B-9D68-4FFA549F249D}
+		{1048EE0F-0256-4B99-A3DC-9636FD941421} = {976F9B9F-4B03-430B-9D68-4FFA549F249D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {467917C2-770E-416E-9C3D-AD0E25AE66D7}
