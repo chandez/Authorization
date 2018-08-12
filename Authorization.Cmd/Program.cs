@@ -24,9 +24,13 @@ namespace Authorization.Cmd
                 return;
             }
 
-            // request token
-            var tokenClient = new TokenClient(disco.TokenEndpoint, "client", "secret");
+            // request token - client credentials client
+            var tokenClient = new TokenClient(disco.TokenEndpoint, "client1Config", "passwordSecret1");
             var tokenResponse = await tokenClient.RequestClientCredentialsAsync("api1");
+
+            // request token - resource owner password grant client
+            //var tokenClient = new TokenClient(disco.TokenEndpoint, "client2Config", "passwordSecret2");
+            //var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("chan@mail.com", "123456", "api1");
 
             if (tokenResponse.IsError)
             {

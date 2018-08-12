@@ -35,25 +35,23 @@ namespace Authorization.Ids
             {
                 new Client
                 {
-                    ClientId = "client",
+                    ClientId = "client1Config",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
-
-                    ClientSecrets = 
+                    ClientSecrets =
                     {
-                        new Secret("secret".Sha256())
+                        new Secret("passwordSecret1".Sha256())
                     },
                     AllowedScopes = { "api1" }
                 },
-
+                
                 // resource owner password grant client
                 new Client
                 {
-                    ClientId = "ro.client",
+                    ClientId = "client2Config",
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-
-                    ClientSecrets = 
+                    ClientSecrets =
                     {
-                        new Secret("secret".Sha256())
+                        new Secret("passwordSecret2".Sha256())
                     },
                     AllowedScopes = { "api1" }
                 },
@@ -64,24 +62,22 @@ namespace Authorization.Ids
                     ClientId = "mvc",
                     ClientName = "MVC Client",
                     AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
-
                     RequireConsent = true,
-
-                    ClientSecrets = 
+                    ClientSecrets =
                     {
                         new Secret("secret".Sha256())
                     },
 
-                    RedirectUris = { "http://localhost:5002/signin-oidc" },
-                    PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
+                    //RedirectUris = { "http://localhost:5002/signin-oidc" },
+                    //PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
 
-                    AllowedScopes =
-                    {
-                        IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile,
-                        "api1"
-                    },
-                    AllowOfflineAccess = true
+                    //AllowedScopes =
+                    //{
+                    //    IdentityServerConstants.StandardScopes.OpenId,
+                    //    IdentityServerConstants.StandardScopes.Profile,
+                    //    "api1"
+                    //},
+                    //AllowOfflineAccess = true
                 }
             };
         }
