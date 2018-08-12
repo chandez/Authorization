@@ -83,7 +83,7 @@ namespace Authorization.Ids
                     ClientId = "mvc",
                     ClientName = "MVC Client",
                     AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
-                    RequireConsent = true,
+                    RequireConsent = false,
                     ClientSecrets =
                     {
                         new Secret("secret".Sha256())
